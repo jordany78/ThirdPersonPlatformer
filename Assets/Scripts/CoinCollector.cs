@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI; // Required for UI components
 
 public class CoinCollector : MonoBehaviour
 {
-    public int coinCount = 0; // Number of coins collected
-    public Text coinText; // Reference to the UI Text element
+    [SerializeField] private TextMeshProUGUI coinText;
+    [SerializeField] public int coinCount = 0;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class CoinCollector : MonoBehaviour
             // Update the UI Text
             if (coinText != null)
             {
-                coinText.text = "Coins: " + coinCount;
+                coinText.text = $"Score: {coinCount}";
             }
 
             // Log the number of coins collected (for testing)
